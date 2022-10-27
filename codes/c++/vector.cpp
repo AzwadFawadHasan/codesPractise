@@ -20,7 +20,8 @@ int main(){
     //puh an element from the backof the vector
     //basically means adding to the end of vector
     cout <<"capacity= "<< v1.capacity() <<endl;//capacity increases by double
-    cout <<"size= "<<v1.size()<<endl;
+    cout <<"size= "<<v1.size()<<"\n after pop back"
+    <<endl;
 
     v1.pop_back();//pop back removes one element from the back
     v1.shrink_to_fit();//shinks vector to fit to size so that it doesn't take any extra space
