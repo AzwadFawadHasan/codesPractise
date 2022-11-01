@@ -1,0 +1,23 @@
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    
+    const elements=[];
+    for(let i =0; i< nums.length; ++i){
+        elements[i]=nums[i];
+        
+    }
+    elements.sort(function(a, b){return a - b});
+    
+    for(let j=0; j< (elements.length -1); ++j){
+        if((elements[j]==elements[j+1])){
+            return true;
+        }
+    }
+    return false;
+    
+    
+    
+};
