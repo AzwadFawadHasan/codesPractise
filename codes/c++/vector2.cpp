@@ -11,8 +11,8 @@ using namespace std;
 int main(){
     //vector like an array
     //can change size dynamically
-    vector<int> v1 = {1,31,2,3};//creating a vector
-
+    vector<int> v1 = {1,31,2,31};//creating a vector
+    cout<<"SIZE OF VECTor" <<v1[4]<<endl;
     for(int i =0; i<v1.size(); ++i){
         cout<< v1[i] << endl;
     }
