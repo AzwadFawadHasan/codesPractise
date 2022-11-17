@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+
+int f(int ind, vector<int> &num, int k) {
+	int n = num.size();
+	if (ind==n) return 0;
+	int len = 0;
+	int maxi = INT_MIN;
+	int maxAns=INT_MIN;
+	for(int j=ind;j<min(ind+k, n);j++){
+	len++;
+	maxi= max(maxi,num[j]);
+	int sum = len* maxi + f(j+1,num,k);
+	maxAns=max(maxAns,sum);
+	}
+	return maxAns;
+}
+
+
+int n=num.size();
+return f(0,num,k);
