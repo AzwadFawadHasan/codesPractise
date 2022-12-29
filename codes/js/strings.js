@@ -57,3 +57,6 @@ for (var i = 0 ; i <fr.length; ++i){
    
 }
 console.log(temp);
+
+//string is immutable.
+//that why why temp is not changed
