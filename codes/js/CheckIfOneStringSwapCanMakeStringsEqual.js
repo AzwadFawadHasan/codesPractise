@@ -29,3 +29,95 @@
     }
     console.log('False')
     //return false;
+
+
+
+
+
+
+/*
+
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {boolean}
+ */
+
+ //check s1 and s2 length
+ //create a count of number of swaps
+ //if there is two swaps// then true
+ //create a charArray variable
+// create a swap variable
+//loop through s1
+    //add value to the corressponding char array
+//loop through s2
+    //if current value is not inside charArray
+        //return false
+    //else
+        //Decrement the value in charArray
+    //condition if s1[i]!=s2[]
+        //swapp++
+    //condition if swap is greater than 2
+        //false
+//return true;
+  /*  
+var areAlmostEqual = function(s1, s2) {
+   var charArray = [];
+   var swaps = 0;
+   var temp ;
+   //base case
+   if(s1===s2){
+       return true;
+   }
+   if((s1.length !=s2.length) || (s1.length<1) || (s2.length>100)){
+       return false;
+   }
+
+
+   for(var i =0; i < s1.length ; ++i){
+       charArray[i] = s1[i];
+
+   }
+   var charS1=[];
+   var charS2=[];
+   var flag=0;
+   var loop=0;
+   for (var i =0; i<s2.length;++i){
+       temp = charArray[i];//0-b
+      
+           if(temp!=s2[i]){
+               charS1[flag]=s1[i];
+               ++flag;
+               ++swaps;//1
+               
+
+               if(swaps>2 ){
+                   loop=1;
+                   //return false
+               }
+               
+               
+           }
+       
+
+   }
+   if(loop==1){
+       for(var j=0; j<charS1.length ; ++j){
+       for(var w=0; w<s2.length;++w){
+           if(charS1[j]!=s2[w]){
+               return false;
+           }
+       }
+               
+   }
+
+   }
+   
+   if(swaps==1|| swaps>2){return false}
+   if (swaps==2 || swaps ==0){return true}
+
+  
+};
+
+
+*/
