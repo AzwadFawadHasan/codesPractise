@@ -2,6 +2,7 @@
  * @param {number[][]} mat
  * @return {number}
  */
+/*
 var diagonalSum = function(mat) {
     var sum=0;
     if(mat.length%2==0){
@@ -117,3 +118,27 @@ var diagonalSum = function(mat) {
 
 
 */
+
+
+/**
+ * @param {number[][]} mat
+ * @return {number}
+ */
+var diagonalSum = function(mat) {
+    
+    var sum=0;
+
+        //even
+        for(var i=0;i<mat.length;++i){
+            sum+=mat[i][i]+mat[i][mat.length-1-i]
+        }
+        if((mat.length-1)%2==0){
+            var length=mat.length-1;
+            length=length/2;
+            var newMat=mat[length][length];
+            sum=sum-(newMat);
+            }
+        return sum;
+    
+    
+};
