@@ -16,11 +16,19 @@ var matrixReshape = function(mat, r, c) {
         return mat;
     }
     var reshape=[];
+    var temp=[];
+    var tempFlag=0;
     var index=0;
     for(var i =0; i<mat.length;++i){
         for(var j=0;j<mat[i].length;++j){
-            reshape[index++]=mat[i][j];
+            temp.push(mat[i][j]);
+            
         }
+       // var temp
+        reshape[index]=temp;
+        //temp=[];
+        //tempFlag=0;
     }
+    
     return reshape;
 };
