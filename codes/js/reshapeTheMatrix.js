@@ -25,7 +25,14 @@ var matrixReshape = function(mat, r, c) {
             
         }
        // var temp
-        reshape[index]=temp;
+        //reshape[index]=temp;
+        //temp=[];
+        //tempFlag=0;
+    }
+     for(var i =0; i<temp.length;i+=c){
+       reshape.push(temp.slice(i,i+c))
+       // var temp
+        //reshape[index]=temp;
         //temp=[];
         //tempFlag=0;
     }
