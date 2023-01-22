@@ -1,3 +1,6 @@
+ var s = "pwwkew"
+ //s = "abcabcbb"
+
 var lengthOfLongestSubstring = function (s) {
     let set = new Set();
     let left = 0;
@@ -9,11 +12,11 @@ var lengthOfLongestSubstring = function (s) {
     for (let i = 0; i < s.length; i++) {
 
         while (set.has(s[i])) {
-            set.delete(s[left])
-            left++;
+            set.delete(s[left])//p->del//
+            left++;//left
         }
-        set.add(s[i]);
-        maxSize = Math.max(maxSize, i - left + 1)
+        set.add(s[i]);//p//w//w
+        maxSize = Math.max(maxSize, i - left + 1)//1 //2
     }
     return maxSize;
 }
