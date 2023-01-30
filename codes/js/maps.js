@@ -31,7 +31,13 @@ for(let[key,value] of myMap)
 }
 
 //getting only the keys
-for(let[key] of myMap)
+for(let[key] of myMap.keys())
 {
     console.log(key)
+}
+
+//getting only the values
+for(let values of myMap.keys())
+{
+    console.log(values)
 }
