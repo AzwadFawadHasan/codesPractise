@@ -1,0 +1,12 @@
+Time and space complexitiy
+heap sort
+binary/regex find the 32 bit of an integer n
+king kills all even positioned men in a single row,  there are 1000 men , which position will be the last man standing
+
+classes and object of products
+->type,
+->style has style info
+->style info has accessories info
+->each style has a listed size
+
+-> implement a map map problems using js 
