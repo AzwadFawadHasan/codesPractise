@@ -2,8 +2,132 @@
  * @param {string[]} tokens
  * @return {number}
  */
-var evalRPN = function(tokens) {
+
+ /***
+ ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
+ stack-> 10, 6, 9, 3, +
+ first secd 
+ 3,  +   9,  = push(12)
+
+ 10, 6, 12,-11,*
+
+ 
+ 
+ 
+ 
+  */
+ var evalRPN = function(tokens) {
+    var arr = new Array();
+    var c=-1
+
+    for(var i =0; i<tokens.length ; ++i){
+        if(tokens[i]=='+'||tokens[i]=='*'||tokens[i]=='-'||tokens[i]=='/'){
+            let first=arr.pop();
+                //c-=1;
+            let second = arr.pop();
+            console.log("first", first, " second ",second)
+            if(tokens[i]=='+'){
+                
+                
+                arr.push(first+second)
+                console.log("+ ", first+second)
+                
+            }else if(tokens[i]=='-'){
+                
+                
+                arr.push(second-first)
+                console.log("- ", second-first)
+            }else if(tokens[i]=='/'){
+                let jj = second/first
+                if(jj>0){
+                     jj = Math.floor(second/first)
+
+                }
+                else{
+                    jj = Math.ceil(second/first)
+
+                }
+               
+                arr.push(Number(jj))
+                console.log("/ ", jj)
+            }else if(tokens[i]=="*"){
+               
+                
+                arr.push(Number(first*second))
+                console.log("* ", Math.floor(second*first))
+
+            }
+
+        }else{
+            let j = Number(tokens[i])
+             console.log("pushing ",j)
+            arr.push(j)
+        }
+    }
+    let k= arr.pop()
+    return k;
+};/**
+
+
     var arr = []
+    var arrCounter =-1;
+
+    for(let i =0;i<tokens.length;++i){
+
+        if(tokens[i] == '+' || tokens[i] == '/' || tokens[i] == '-' || tokens[i] == '*' ){
+            if(tokens[i]=="+"){
+                let second = tokens[arrCounter]//3
+                arrCounter-=1
+                let first = tokens[arrCounter]//9
+                arr.pop();arr.pop()
+
+                arr.push(first+second)
+                arrCounter++;
+                
+            }
+            if(tokens[i]=="-"){
+                let second = tokens[arrCounter]
+                arrCounter-=1
+                let first = tokens[arrCounter]
+                 arr.pop();arr.pop()
+                arr.push(first-second)
+                arrCounter++;
+            }if(tokens[i]=="*"){
+                let second = tokens[arrCounter]
+                arrCounter-=1
+                let first = tokens[arrCounter]
+                 arr.pop();arr.pop()
+                arr.push(first*second)
+                arrCounter++;
+            }if(tokens[i]=='/'){
+                
+                let second = tokens[arrCounter]
+                arrCounter-=1
+                let first = tokens[arrCounter]
+                 arr.pop();arr.pop()
+                arr.push(Math.floor(first/second))
+                arrCounter++;
+            
+            }
+        }else{
+            ++arrCounter;
+            let j = Number(tokens[i])
+            arr.push(j)
+            
+        }
+        
+    }
+
+    return tokens[arrCounter]
+
+
+  
+
+
+ */
+
+/***
+var arr = []
     var res,first,second
 
     for(var i=0; i<tokens.length; ++i){
@@ -69,7 +193,8 @@ var evalRPN = function(tokens) {
     
 
     
-};
+
+ */
 
 /**
 tokens.forEach((v,i)=>{
@@ -152,4 +277,70 @@ tokens.forEach((v,i)=>{
     }
     
     
+    *//*
+
+
+      var arr = []
+    var res,first,second
+
+    for(var i=0; i<tokens.length; ++i){ 
+        let v = tokens[i]
+
+        if(
+            v=="+"||v=="-"||v=="/"||v=="*"
+        ){
+            console.log("operand found")
+            if(v=="+"){
+               
+                    first =arr.pop()
+                    second=arr.pop()
+                    res = first+second
+                    arr.push(res)
+                    console.log("res  ",res)
+                    
+                
+                
+            }
+            else if(v=="-"){
+            
+                    first =arr.pop()
+                    second=arr.pop()
+                    res = second-first
+                    arr.push(res)
+                    console.log("res  ",res)
+               
+            }
+            else if(v=="/"){
+                
+                    first =arr.pop()
+                    second=arr.pop()
+                    res = Math.floor(second/first)
+                    arr.push(res)
+                    console.log("res  ",res)
+                    
+             
+            }
+            else if(v=="*"){
+                
+                    first =arr.pop()
+                    second=arr.pop()
+                    res = Math.floor(second*first)
+                    arr.push(res)
+                    console.log("res  ",res)
+               
+            }
+            
+        }
+        else{
+            arr.push(v)
+        }
+
+
+
+
+    }
+    let r = arr.pop()
+    return r;
+
+
     */

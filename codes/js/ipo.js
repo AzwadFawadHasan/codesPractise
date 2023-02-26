@@ -4,14 +4,6 @@
  * @param {number[]} profits
  * @param {number[]} capital
  * @return {number}
- * 
- * REACTO
- * repeat
- * Example 
- * Approach
- * Code
- * Task
- * Optimize
  */
 
 /**
@@ -24,49 +16,30 @@ At Most K profits
         capital[i] is needed to start it
     
         After finishing w+=pureProfit
- *//*
+ */
         var findMaximizedCapital = function(k, w, profits, capital) {
-
-            var maxProjectLimit =k
-            var initialCapital = w
-            //mapping two arrays into a 2d array
-            let foundProject=-1
-            while(k!=0){
-                for(var i =0; i <capital.length; ++i){
-                   let projectSelector=w;
-                   if(capital[i]<=projectSelector){
-                       var index=i;
-            
-                   }
-                }
+            let capitalsAscendingQueue = new MinPriorityQueue();
+            let profitsDescendingQueue = new MaxPriorityQueue();
+        
+            for(let i=0; i<capital.length;++i){
+                capitalsAscendingQueue.enqueue([capital[i], profits[i]] , capital[i])
+        
             }
-            
-        };*/
-
-
-/**
- * @param {number} k
- * @param {number} w
- * @param {number[]} profits
- * @param {number[]} capital
- * @return {number}
- */
-
-/**
-At Most K profits
-
-        n projects
-
-        n[i]= pure profit
-
-        capital[i] is needed to start it
-    
-        After finishing w+=pureProfit
- */
-        var findMaximizedCapital = function(k, w, profits, capital) {
-
+        
+            for(let i=0; i<k;++i){
+                while(!capitalsAscendingQueue.isEmpty() && capitalsAscendingQueue.front().element[0] <=w){
+                    let el = capitalsAscendingQueue.dequeue().element;
+                    profitsDescendingQueue.enqueue(el,el[1])
+                }
+                if(profitsDescendingQueue.isEmpty()){return w}
+                w+=profitsDescendingQueue.dequeue().element[1]
+            }
+        return w
+        };
+        /*
             //k no. of distict projects
             //w iniial capital
+            
             var currProfit=-1
             var currIndex=-1
             var currCapital=-1
@@ -75,6 +48,7 @@ At Most K profits
             var flag=false
             var j=0;
             let count=0;
+            let edge =false
             while(flag!=true){
             for(var i=0; i < capital.length ; ++i){
         
@@ -82,13 +56,17 @@ At Most K profits
                     currProfit = profits[i]
                     currCapital=capital[i]
                     currIndex=i
+                    edge=true
                 }
         
             }
             count++;
             j+=profits[currIndex]
             w=w-capital[currIndex]+profits[currIndex]
-            if(count==k){flag= true}
+            if(!edge){
+                return 0
+            }
+            if(count==k){flag= true;  return iw+j}
             if(flag==true){
                 ans=iw+j
                 return ans
@@ -99,8 +77,7 @@ At Most K profits
             
         
            
-            
-        };
+            */
         
         /*
         
@@ -134,21 +111,3 @@ At Most K profits
         
         
             */
-
-
-            /**
-             * 
-             * class Solution {
-  fun findMaximizedCapital(k: Int, w: Int, profits: IntArray, capital: IntArray): Int {
-    val indices = (0 until profits.size).sortedWith(Comparator<Int>{a, b -> capital[b] - capital[a]}).toMutableList();
-    val pq = PriorityQueue<Int> { a, b -> b - a }
-    var res = w
-    repeat(k) {
-      while (!indices.isEmpty() && res >= capital[indices.last()])
-        pq.offer(profits[indices.removeAt(indices.size - 1)])
-      res += pq.poll() ?: 0
-    }
-    return res
-  }
-}
-             */
