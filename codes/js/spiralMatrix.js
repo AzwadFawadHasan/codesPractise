@@ -52,7 +52,7 @@ for (let j=0; j<matrix.length; ++j){
                 let k = matrix[BeginRow][i]
                 res.push(k)
             }
-            BeginRow++;
+            ++BeginRow;
             for(let i=BeginRow; i<=EndRow; ++i){
                 let k = matrix[i][EndColumn]
                 res.push(k)
@@ -60,13 +60,12 @@ for (let j=0; j<matrix.length; ++j){
             EndColumn--
             if(BeginRow<=EndRow){
                 for(let i=EndColumn; i>=BeginColumn; --i){
-                    let k = matrix[i][EndColumn]
+                    let k = matrix[EndRow][i]
                     res.push(k)
                 }
-                
-    
+               
             }
-            EndRow--
+            EndRow-- 
             if(BeginColumn <= EndColumn){
                 for(let i=EndRow; i>=BeginRow; --i){
                     let k = matrix[i][BeginColumn]
@@ -74,7 +73,8 @@ for (let j=0; j<matrix.length; ++j){
                 }
                 
             }
-            BeginRow++
+            BeginColumn++
+            
         }
         return res
     
