@@ -1,7 +1,6 @@
-["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
+If we are on the same block of code, all the code shares the same stack. Stack is designed for variables and primitives
 
-"10","6",
+Heap is used for garbage collection.
+'
 
-"9","3","+"
-
-12 ,"-11","*"
+Heap is a complete binary tree

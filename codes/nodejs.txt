@@ -1,0 +1,23 @@
+node js is an opensource cross platform runtime env for executing javascript code outside of a browser. We use node to develop api -> application programming interfaces
+
+there are other tools and framework out there such as asp.net, rails, django
+
+So, what's so special about node js
+-Easy for prototyping and agile development
+-can be used to make scalable products
+- its effiecent less size high performance
+a
+bababa
+b
+
+a
+baab
+a
+
+abcabcabcabc + abcabcabcabc
+
+a
+	
+	bcabcabcabc + abcabcabcab
+	  abcabcabcabc 
+c
