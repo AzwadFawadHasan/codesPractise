@@ -50,15 +50,9 @@ var nextGreaterElement =  function(n) {
     //console.log(newArr)
     const integer = parseInt(newArr.join(''));
     //console.log(integer)
-    if(integer > n){
-
-        return integer
-    }
-    else{
-
-        return -1;
-    }
-
+    
+    let max32BitInt = 2147483647
+    return integer > max32BitInt ? -1 : integer
 
     
 };
